@@ -1,0 +1,4 @@
+{
+    "ignore": ["*.md","*.json","lib/*.js"],
+    "exec": "./node_modules/.bin/babel  src --out-dir lib"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "benalittlewhileblog",
+  "version": "0.0.1",
+  "description": "probably nothing important",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/babel src --out-dir lib",
+    "watch-babel": "nodemon",
+    "watch-server": "npx live-server --open=/lib/index.html",
+    "dev": "concurrently \"npm:watch-babel\" \"npm:watch-server\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benalittlewhile/blog2.git"
+  },
+  "keywords": [
+    "banana"
+  ],
+  "author": "Ben Hickey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benalittlewhile/blog2/issues"
+  },
+  "homepage": "https://github.com/benalittlewhile/blog2#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
+    "concurrently": "^5.1.0",
+    "live-server": "^1.2.1",
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {}
+}
