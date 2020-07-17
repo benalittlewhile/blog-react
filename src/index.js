@@ -1,35 +1,36 @@
 "use strict";
-const pages = ["index", "tolearn", "todo", "banana"];
 
-function Navbar() {
-  return (
-    <div className="navbar">
-      <NavbarElement page="index.html" title="index" />
-      <NavbarElement page="tolearn.html" title="tolearn" />
-    </div>
-  );
-}
-
-function NavbarElement(props) {
-  let filename = location.href.split("/").slice(-1);
-  console.log(`props.page: ${props.page} filename: ${filename}`);
-  //if we're on the page this element represents, flag it as active for
-  //styling
-  if (props.page == filename) {
-    return (
-      <a href={props.page} className="active">
-        {props.title}
-      </a>
-    );
-  } else {
-    return <a href={props.page}>{props.title}</a>;
-  }
-}
-
+// import { Navbar } from "./Navbar.js";
+// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import * as React from "react";
+import * as ReactDom from "react-dom";
+import { ToLearn } from "./ToLearn.js";
 function app() {
   return (
+    //   <Router>
+    //     <div>
+    //       <ul>
+    //         <li>
+    //           <Link to="/">home</Link>
+    //         </li>
+    //         <li>
+    //           <Link to="/ToLearn">tolearn</Link>
+    //         </li>
+    //       </ul>
+    //       <hr />
+    //       <Switch>
+    //         <Route exact path="/">
+    //           <Home />
+    //         </Route>
+    //         <Route exact path="ToLearn">
+    //           <ToLearn />
+    //         </Route>
+    //       </Switch>
+    //     </div>
+    //   </Router>
+    // );
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="center">
         <h1>Hello world!!</h1>
         <h1>banana</h1>
