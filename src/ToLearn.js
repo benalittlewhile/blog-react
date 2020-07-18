@@ -1,12 +1,9 @@
-// import { Navbar } from "./Navbar.js";
-function app() {
+import React from "react";
+export function ToLearn() {
   return (
-    <div className="body">
-      <div className="center">
-        <p>How do you like me nao</p>
-      </div>
+    <div className="ToLearn center">
+      <h1>I'm a banana</h1>
+      <p>Big Banana</p>
     </div>
   );
 }
-
-ReactDOM.render(app(), document.getElementById("root"));

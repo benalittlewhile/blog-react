@@ -9,16 +9,19 @@ body {
   margin: 0 auto;
   padding: 0;
 }
+
 .center {
   width: 900px;
   margin: 0 auto;
   margin-top: 45px;
 }
+
 @media only screen and (max-width: 899px) {
   .center {
     width: 100%;
   }
 }
+
 .post {
   background-color: #212b30;
   padding: 10px;
@@ -26,7 +29,7 @@ body {
   font-size: 16px;
 }
 
-.navbar {
+nav {
   background-color: #1c2529;
   overflow: hidden;
   position: fixed;
@@ -34,7 +37,7 @@ body {
   width: 100%;
 }
 
-.navbar a {
+nav a {
   float: left;
   color: #eeffff;
   text-align: center;
@@ -43,11 +46,11 @@ body {
   text-decoration: none;
 }
 
-.navbar a:hover {
+nav a:hover {
   color: #82aaff;
 }
 
-.navbar a.active {
+nav a.active {
   background-color: #212b30;
 }
 
