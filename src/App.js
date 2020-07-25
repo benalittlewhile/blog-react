@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 // import the components for the "pages" of the app
 import { Home } from "./Home.js";
 import { ToLearn } from "./ToLearn.js";
+import { Blog } from "./Blog.js";
 
 // make it all pretty
 import "./style.css";
@@ -17,6 +18,7 @@ function App() {
       <div>
         <nav>
           <Link to="/">Home</Link>
+          <Link to="/Blog">Blog</Link>
           <Link to="/ToLearn">tolearn</Link>
         </nav>
         <Switch>
@@ -25,6 +27,9 @@ function App() {
           </Route>
           <Route path="/">
             <Home />
+          </Route>
+          <Route path="/Blog">
+            <Blog />
           </Route>
         </Switch>
       </div>
