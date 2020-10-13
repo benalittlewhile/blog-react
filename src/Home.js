@@ -2,7 +2,16 @@ import React from "react";
 const contentful = require("contentful");
 
 export function Home() {
-  const [posts, setPosts] = React.useState([]);
+  const mockEntry = [
+    {
+      fields: {
+        date: "",
+        postbody: "",
+        title: "",
+      },
+    },
+  ];
+  const [posts, setPosts] = React.useState(mockEntry);
   React.useEffect(() => {
     const client = contentful.createClient({
       space: "5c81s2y9z1bv",
@@ -10,12 +19,13 @@ export function Home() {
     });
 
     client.getEntries().then((response) => {
-      console.log(typeof Object.values(response.items));
-      console.log(response.items[0]);
+      console.log(typeof response.items);
+      console.log(response.items[0].fields);
       // console.log(Object.values(response.items));
       setPosts(response.items);
     });
   }, []);
+
   return (
     <div className="Home center">
       <h1>I'm a homepage</h1>
@@ -27,12 +37,18 @@ export function Home() {
         dolore doloribus!
       </p>
       <p>this is home.js</p>
-      {posts.forEach((post) => (
-        <div className="Postbody">
+      {posts.map((post) => (
+        <div className="Post" key={post.fields.title + post.fields.date}>
           banana
           <h1>{post.fields.title}</h1>
           <h3>{post.fields.date}</h3>
-          <p>{post.fields.postbody}</p>
+          {/* yes I know this is the wrong way to do this but it works for
+          my purposes for the time being and I have sole control of the content
+          being injected into it */}
+          <div
+            className="postbody"
+            dangerouslySetInnerHTML={{ __html: post.fields.postbody }}
+          />
         </div>
       ))}
     </div>
