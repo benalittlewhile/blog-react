@@ -2,24 +2,44 @@ import React from "react";
 const contentful = require("contentful");
 
 export function Blog() {
-  const [post, setPost] = React.useState(null);
+  const mockEntry = [
+    {
+      fields: {
+        date: "",
+        postbody: "",
+        title: "",
+      },
+    },
+  ];
+
+  const [posts, setPosts] = React.useState(mockEntry);
+
   React.useEffect(() => {
     const client = contentful.createClient({
-      space: "<space_id>",
-      accessToken: "<content_delivery_api_key>",
+      space: "5c81s2y9z1bv",
+      accessToken: "l9FKAAZ2viDJwV_dlNaEsHCiQ_0TH3M5GJgbdPNolTE",
     });
+
     client.getEntries().then((response) => {
-      setPost(response);
-      console.log(response);
+      setPosts(response.items);
     });
   }, []);
 
   return (
     <div className="Blog center">
-      <h1>I'm a banana</h1>
-      <p>Big Banana</p>
-      <p>{post}</p>
-      <h1>fff</h1>
+      {posts.map((post) => (
+        <div className="Post" key={post.fields.title + post.fields.date}>
+          <h1>{post.fields.title}</h1>
+          <h3>{post.fields.date}</h3>
+          {/* yes I know this is the wrong way to do this but it works for
+          my purposes for the time being and I have sole control of the content
+          being injected into it */}
+          <div
+            className="postbody"
+            dangerouslySetInnerHTML={{ __html: post.fields.postbody }}
+          />
+        </div>
+      ))}
     </div>
   );
 }

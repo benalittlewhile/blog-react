@@ -22,15 +22,9 @@ function App() {
           <Link to="/ToLearn">tolearn</Link>
         </nav>
         <Switch>
-          <Route path="/Tolearn">
-            <ToLearn />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-          <Route path="/Blog">
-            <Blog />
-          </Route>
+          <Route exact path="/" component={Home}></Route>
+          <Route exact path="/Blog" component={Blog}></Route>
+          <Route exact path="/Tolearn" component={ToLearn}></Route>
         </Switch>
       </div>
     </Router>
