@@ -26,11 +26,11 @@ export function Blog() {
   }, []);
 
   return (
-    <div className="Blog center">
+    <div className="center">
       {posts.map((post) => (
-        <div className="Post" key={post.fields.title + post.fields.date}>
-          <h1>{post.fields.title}</h1>
-          <h3>{post.fields.date}</h3>
+        <div className="post" key={post.fields.title + post.fields.date}>
+          <h2>{post.fields.title}</h2>
+          <h4>{post.fields.date}</h4>
           {/* yes I know this is the wrong way to do this but it works for
           my purposes for the time being and I have sole control of the content
           being injected into it */}

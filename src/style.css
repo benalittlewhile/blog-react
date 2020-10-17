@@ -13,20 +13,21 @@ body {
 .center {
   width: 900px;
   margin: 0 auto;
-  margin-top: 45px;
+  margin-top: calc(45px + 1vh);
 }
 
 @media only screen and (max-width: 899px) {
   .center {
-    width: 100%;
+    width: 96%;
   }
 }
 
 .post {
   background-color: #212b30;
-  padding: 10px;
-  padding-top: 5px;
   font-size: 16px;
+  padding: 1%;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 
 nav {

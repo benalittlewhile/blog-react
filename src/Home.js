@@ -1,7 +1,7 @@
 import React from "react";
 export function Home() {
   return (
-    <div className="Home center">
+    <div className="center">
       <h1>I'm a homepage</h1>
       <p>Homeskillet</p>
       <p className="post">
