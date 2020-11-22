@@ -1,16 +1,23 @@
 import React from "react";
+import profile from "./profile.jpeg";
+
 export function Home() {
   return (
     <div className="center">
-      <h1>I'm a homepage</h1>
-      <p>Homeskillet</p>
-      <p className="post">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta
-        minus molestiae vel beatae natus eveniet ratione temporibus aperiam
-        harum alias officiis assumenda officia quibusdam deleniti eos cupiditate
-        dolore doloribus!
-      </p>
-      <p>this is home.js</p>
+      <div className="bioTop">
+        <img
+          src={profile}
+          alt="Ben in front of a Tobor"
+          className="profilePic"
+        />
+        <div className="contactInfo">
+          <h2>Ben Hickey</h2>
+          <h5>Aspiring Front-End Guy</h5>
+          <br />
+          Email: benhickeydev@gmail.com <br />
+          github: @Benalittlewhile
+        </div>
+      </div>
     </div>
   );
 }
