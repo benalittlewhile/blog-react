@@ -92,3 +92,14 @@ code {
   font-size: larger;
   margin: 5%;
 }
+
+a.GHLinkLogo {
+  padding: 0;
+}
+img.GHLinkLogo {
+  max-height: 70%;
+  object-fit: contain;
+  padding-top: 7px;
+  position: absolute;
+  right: 1%;
+}
