@@ -20,9 +20,15 @@ export function Blog() {
       accessToken: "l9FKAAZ2viDJwV_dlNaEsHCiQ_0TH3M5GJgbdPNolTE",
     });
 
-    client.getEntries().then((response) => {
-      setPosts(response.items);
-    });
+    client
+      .getEntries()
+      .then((response) => response.items)
+      .then((items) =>
+        items.sort((a, b) =>
+          Date.parse(a.fields.date) > Date.parse(b.fields.date) ? -1 : 1
+        )
+      )
+      .then((itemsSorted) => setPosts(itemsSorted));
   }, []);
 
   return (
