@@ -16,29 +16,22 @@ import "./style.css";
 function App() {
   return (
     <Router>
-      <div>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/Blog">Blog</Link>
-          <a href="https://github.com/benalittlewhile/dotfiles">Config</a>
-          <div className="GHLinkLogo">
-            <a
-              className="GHLinkLogo"
-              href="https://github.com/benalittlewhile/"
-            >
-              <img
-                className="GHLinkLogo"
-                src={GitHubLogo}
-                alt="the Github logo"
-              ></img>
-            </a>
-          </div>
-        </nav>
-        <Switch>
-          <Route exact path="/" component={Home}></Route>
-          <Route exact path="/Blog" component={Blog}></Route>
-        </Switch>
-      </div>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/Blog">Blog</Link>
+        <a href="https://github.com/benalittlewhile/dotfiles">Config</a>
+        <a className="GHLinkLogo" href="https://github.com/benalittlewhile/">
+          <img
+            className="GHLinkLogo"
+            src={GitHubLogo}
+            alt="the Github logo"
+          ></img>
+        </a>
+      </nav>
+      <Switch>
+        <Route exact path="/" component={Home}></Route>
+        <Route exact path="/Blog" component={Blog}></Route>
+      </Switch>
     </Router>
   );
 }
