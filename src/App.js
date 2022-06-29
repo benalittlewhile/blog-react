@@ -3,7 +3,12 @@ import React from "react";
 import GitHubLogo from "./GitHub-Mark-Light-64px.png";
 
 // import react-router-dom so I can use it to link different pages
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink,
+} from "react-router-dom";
 
 // import the components for the "pages" of the app
 import { Home } from "./Home.js";
@@ -17,8 +22,16 @@ function App() {
   return (
     <Router>
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/Blog">Blog</Link>
+        <NavLink
+          exact
+          to="/"
+          // className={(isActive) => (isActive ? "linkActive" : "link")}
+        >
+          Home
+        </NavLink>
+        <NavLink exact to="/Blog">
+          Blog
+        </NavLink>
         <a href="https://github.com/benalittlewhile/dotfiles">Config</a>
         <a className="GHLinkLogo" href="https://github.com/benalittlewhile/">
           <img

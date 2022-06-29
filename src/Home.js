@@ -15,8 +15,9 @@ export function Home() {
           <h4>Fullstack Javascript Nerd</h4>
           <h5>Friend of Corgis</h5>
           <br />
-          Email: benhickeydev@gmail.com <br />
-          github: @Benalittlewhile
+          <p>Email: benhickeydev@gmail.com</p>
+          {/* <br /> */}
+          <p>github: @Benalittlewhile</p>
         </div>
       </div>
     </div>
